@@ -2,7 +2,7 @@
 What is OpenSynth?
 --------------
 
-OpenSynth is designed to make it easy and fun to make music.  You can easily import samples, to make any sound music.  This program is forked from LMMS (lmms.io) and shares some of the same features.  This program was primarily created to be used with androids, (robots with a human appearence,) but can be used for regular music production, too.  This program features instruments used in John Bergeron's Android Music Videos, from volume 1 and 2.  I hope you enjoy using this program!  If you have any questions or concerns, please email me at androidbuilder@outlook.com.
+OpenSynth is designed to make it easy and fun to make music.  You can easily import samples, to make any sound music.  This program is forked from LMMS (lmms.io) and shares some of the same features.  This program was primarily created to be used with androids, (robots with a human appearance,) but can be used for regular music production, too.  This program features instruments used in John Bergeron's Android Music Videos, from volume 1 and 2.  I hope you enjoy using this program!  If you have any questions or concerns, please email me at androidbuilder@outlook.com.
 
 [Homepage](https://www.sites.google.com/view/beaklandstudios)<br>
 [Downloads/Releases](https://github.com/AndroidMusicVideos/OpenSynth)<br>
