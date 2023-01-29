@@ -1,127 +1,20 @@
-set(LMMS_SRCS
-	${LMMS_SRCS}
+SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}")
+SET(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}")
+SET(CMAKE_DEBUG_POSTFIX "")
 
-	core/AudioEngine.cpp
-	core/AudioEngineProfiler.cpp
-	core/AudioEngineWorkerThread.cpp
-	core/AutomatableModel.cpp
-	core/AutomationClip.cpp
-	core/AutomationNode.cpp
-	core/BandLimitedWave.cpp
-	core/base64.cpp
-	core/BufferManager.cpp
-	core/Clipboard.cpp
-	core/ComboBoxModel.cpp
-	core/ConfigManager.cpp
-	core/Controller.cpp
-	core/ControllerConnection.cpp
-	core/DataFile.cpp
-	core/DrumSynth.cpp
-	core/Effect.cpp
-	core/EffectChain.cpp
-	core/Engine.cpp
-	core/EnvelopeAndLfoParameters.cpp
-	core/fft_helpers.cpp
-	core/Mixer.cpp
-	core/ImportFilter.cpp
-	core/InlineAutomation.cpp
-	core/Instrument.cpp
-	core/InstrumentFunctions.cpp
-	core/InstrumentPlayHandle.cpp
-	core/InstrumentSoundShaping.cpp
-	core/JournallingObject.cpp
-	core/Keymap.cpp
-	core/Ladspa2LMMS.cpp
-	core/LadspaControl.cpp
-	core/LadspaManager.cpp
-	core/LfoController.cpp
-	core/LinkedModelGroups.cpp
-	core/LocklessAllocator.cpp
-	core/MemoryHelper.cpp
-	core/MemoryManager.cpp
-	core/MeterModel.cpp
-	core/MicroTimer.cpp
-	core/Microtuner.cpp
-	core/MixHelpers.cpp
-	core/Model.cpp
-	core/ModelVisitor.cpp
-	core/Note.cpp
-	core/NotePlayHandle.cpp
-	core/Oscillator.cpp
-	core/PathUtil.cpp
-	core/PatternClip.cpp
-	core/PatternStore.cpp
-	core/PeakController.cpp
-	core/PerfLog.cpp
-	core/Piano.cpp
-	core/PlayHandle.cpp
-	core/Plugin.cpp
-	core/PluginIssue.cpp
-	core/PluginFactory.cpp
-	core/PresetPreviewPlayHandle.cpp
-	core/ProjectJournal.cpp
-	core/ProjectRenderer.cpp
-	core/ProjectVersion.cpp
-	core/RemotePlugin.cpp
-	core/RenderManager.cpp
-	core/RingBuffer.cpp
-	core/SampleBuffer.cpp
-	core/SampleClip.cpp
-	core/SamplePlayHandle.cpp
-	core/SampleRecordHandle.cpp
-	core/Scale.cpp
-	core/SerializingObject.cpp
-	core/Song.cpp
-	core/TempoSyncKnobModel.cpp
-	core/TimePos.cpp
-	core/ToolPlugin.cpp
-	core/Track.cpp
-	core/TrackContainer.cpp
-	core/Clip.cpp
-	core/ValueBuffer.cpp
-	core/VstSyncController.cpp
-	core/StepRecorder.cpp
+# Enable C++17
+SET(CMAKE_CXX_STANDARD 17)
 
-	core/audio/AudioAlsa.cpp
-	core/audio/AudioDevice.cpp
-	core/audio/AudioFileDevice.cpp
-	core/audio/AudioFileMP3.cpp
-	core/audio/AudioFileOgg.cpp
-	core/audio/AudioFileFlac.cpp
-	core/audio/AudioFileWave.cpp
-	core/audio/AudioJack.cpp
-	core/audio/AudioOss.cpp
-	core/audio/AudioSndio.cpp
-	core/audio/AudioPort.cpp
-	core/audio/AudioPortAudio.cpp
-	core/audio/AudioSoundIo.cpp
-	core/audio/AudioPulseAudio.cpp
-	core/audio/AudioSampleRecorder.cpp
-	core/audio/AudioSdl.cpp
+IF(LMMS_BUILD_APPLE)
+	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+ENDIF()
 
-	core/lv2/Lv2Basics.cpp
-	core/lv2/Lv2ControlBase.cpp
-	core/lv2/Lv2Evbuf.cpp
-	core/lv2/Lv2Features.cpp
-	core/lv2/Lv2Ports.cpp
-	core/lv2/Lv2Proc.cpp
-	core/lv2/Lv2Manager.cpp
-	core/lv2/Lv2Options.cpp
-	core/lv2/Lv2SubPluginFeatures.cpp
-	core/lv2/Lv2UridCache.cpp
-	core/lv2/Lv2UridMap.cpp
-
-	core/midi/MidiAlsaRaw.cpp
-	core/midi/MidiAlsaSeq.cpp
-	core/midi/MidiClient.cpp
-	core/midi/MidiController.cpp
-	core/midi/MidiEventToByteSeq.cpp
-	core/midi/MidiJack.cpp
-	core/midi/MidiOss.cpp
-	core/midi/MidiSndio.cpp
-	core/midi/MidiApple.cpp
-	core/midi/MidiPort.cpp
-	core/midi/MidiWinMM.cpp
-
-	PARENT_SCOPE
+INCLUDE_DIRECTORIES(
+	${SAMPLERATE_INCLUDE_DIRS}
+	"${CMAKE_BINARY_DIR}/src"
 )
+
+# See cmake/modules/PluginList.cmake
+FOREACH(PLUGIN ${PLUGIN_LIST})
+	ADD_SUBDIRECTORY(${PLUGIN})
+ENDFOREACH()
