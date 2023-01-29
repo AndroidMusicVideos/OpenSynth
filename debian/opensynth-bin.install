@@ -1,0 +1,4 @@
+usr/bin/opensynth
+usr/lib/*/opensynth/ladspa/*
+usr/lib/*/opensynth/lib*
+usr/lib/*/opensynth/RemoteZynAddSubFx

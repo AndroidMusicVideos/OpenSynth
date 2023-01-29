@@ -1,0 +1,9 @@
+opensynth: pkg-has-shlibs-control-file-but-no-actual-shared-libs
+opensynth: postinst-has-useless-call-to-ldconfig
+opensynth: postrm-has-useless-call-to-ldconfig
+
+# env is used to set the environment, then opensynth is called.
+opensynth: desktop-command-not-in-package usr/share/applications/opensynth.desktop env
+
+# Icon is in opensynth-common.
+opensynth: menu-icon-missing usr/share/pixmaps/opensynth.xpm

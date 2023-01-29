@@ -1,0 +1,25 @@
+usr/share/applications
+usr/share/bash-completion
+usr/share/icons
+usr/share/opensynth/[a-o]*
+usr/share/opensynth/presets/[A-Y]*
+usr/share/opensynth/projects/demos/Alf42red-*
+usr/share/opensynth/projects/demos/CapDan
+usr/share/opensynth/projects/demos/EsoXLB-*
+usr/share/opensynth/projects/demos/Impulslogik-*
+usr/share/opensynth/projects/demos/Jousboxx-*
+usr/share/opensynth/projects/demos/Momo64-*
+usr/share/opensynth/projects/demos/Oglsdl-*
+usr/share/opensynth/projects/demos/Settel-*
+usr/share/opensynth/projects/demos/Socceroos-*
+usr/share/opensynth/projects/demos/TameAnderson-*
+usr/share/opensynth/projects/demos/Thomasso-*
+usr/share/opensynth/projects/shorties/Crunk*
+usr/share/opensynth/projects/shorties/Greshz-*
+usr/share/opensynth/projects/shorties/Surrender-*
+usr/share/opensynth/projects/templates
+usr/share/opensynth/projects/tutorials
+usr/share/opensynth/[q-z]*
+usr/share/man
+usr/share/mime
+debian/opensynth.xpm usr/share/pixmaps/
